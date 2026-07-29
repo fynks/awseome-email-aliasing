@@ -145,6 +145,7 @@ Think of it like a P.O. Box for your email - you hand out forwarding addresses, 
 | [Forward Email](https://forwardemail.net) | USA 🇺🇸 | ✅ (own domain) | $3/mo | Paid only | ✅ | AES-256 at rest, 10GB storage |
 | [DuckDuckGo Email](https://duckduckgo.com/email) | USA 🇺🇸 | ✅ (unlimited) | Free only | ✅ | Partial | Tracker removal |
 | [Firefox Relay](https://relay.firefox.com) | USA 🇺🇸 | ✅ (50 masks) | $0.99/mo | Premium | Partial | Phone masking on Premium |
+| [Emcognito](https://emcognito.com) | USA 🇺🇸 | ✅ (unlimited aliases, 100 forwards/mo) | $2/mo | ✅ | ❌ | Meters forwards, not aliases; passwordless |
 | [AdGuard Mail](https://adguard.com/adguard-temp-mail) | Cyprus 🇨🇾 | ✅ (limited) | $2.99/mo | Premium | Partial | Temporary aliases |
 | [33Mail](https://33mail.com) | UK 🇬🇧 | ✅ | $1/mo | Premium | ❌ | Simple, long-standing service |
 | [Ivy by IronVest](https://getivy.ai) | USA 🇺🇸 | ❌ | $3.25/mo ($39/yr) | ✅ | ❌ | AI copilot, email + phone + card masking |
@@ -168,6 +169,7 @@ Think of it like a P.O. Box for your email - you hand out forwarding addresses, 
 | SimpleLogin | 10 (+ Proton Pass Free) | ✅ | ❌ | PGP, mobile apps, browser extensions, Proton Pass Free included | Beginners |
 | DuckDuckGo | Unlimited `@duck.com` | ✅ | ❌ | Tracker removal, browser autofill | Quickest start |
 | Firefox Relay | 50 masks | ❌ | ❌ | Tracker removal, Firefox integration | Mozilla users |
+| Emcognito | Unlimited (100 forwards/mo) | ✅ | ❌ | Passwordless (magic link/passkey), suspend/resume per alias, no body storage | Unlimited aliases with reply on free |
 | AdGuard Mail | ~10 | ❌ | ❌ | Temporary alias option | Light/casual use |
 | 33Mail | Unlimited | ❌ | ❌ | Simple and reliable | Basic forwarding |
 | Erine.email | Unlimited | ✅ | ❌ | Open-source, EU-hosted | Privacy advocates |
@@ -191,6 +193,8 @@ Think of it like a P.O. Box for your email - you hand out forwarding addresses, 
 | **Forward Email Enhanced** | $3/mo | Unlimited | ✅ | Unlimited | AES-256 at rest, 10GB IMAP, webhooks, API |
 | **Forward Email Team** | $9/mo | Unlimited | ✅ | Unlimited | Shared team access, priority support |
 | **Firefox Relay Premium** | $0.99/mo | Unlimited masks | ✅ | 1 subdomain | Phone masking (US/CA), tracker removal |
+| **Emcognito Plus** | $2/mo ($20/yr) | Unlimited | ✅ | ❌ | 2,500 forwards/mo, compose new mail from an alias, no footer on forwards |
+| **Emcognito Pro** | $4/mo ($36/yr) | Unlimited | ✅ | ❌ | 15,000 forwards/mo, higher daily compose limit |
 | **AdGuard Mail Premium** | $2.99/mo | ~1,000 | ✅ | 1 | Anonymous replies, premium domains |
 | **33Mail Premium** | $1/mo | Unlimited | ✅ (20/day) | 1 | Simple, long-standing |
 | **33Mail Pro** | $5/mo | Unlimited | ✅ (100/day) | 5 | Higher volume |
@@ -201,6 +205,7 @@ Think of it like a P.O. Box for your email - you hand out forwarding addresses, 
 
 > [!NOTE]
 > - "Unlimited" means no fixed hard cap but subject to fair-use/abuse limits.
+> - Emcognito meters **forwarded messages per month** rather than the number of aliases. Every tier including free allows unlimited aliases; the plan price buys forwarding volume. Note this is a different trade rather than a strictly better one — DuckDuckGo and 33Mail give unlimited free aliases with no forward cap.
 > - SimpleLogin Premium now **includes Proton Pass Plus** at no extra cost (as of Nov 2024).
 > - Firefox Relay phone masking is available in the US and Canada only.
 > - Regional pricing varies; always verify on the provider's official site.
@@ -278,6 +283,7 @@ Think of it like a P.O. Box for your email - you hand out forwarding addresses, 
 | Forward Email | Queue/delivery only; self-host option | Configurable / self-host | None by default | Minimal: domain configs + DNS only |
 | DuckDuckGo Email | Strips trackers; minimal logs | Minimization approach | Anonymous/aggregate | Email address only stored |
 | Firefox Relay | Delivery only; deleted after forward | Mozilla policies | Mozilla telemetry (opt-out) | Mozilla account data |
+| Emcognito | Not stored — deleted once SES accepts; no message-body field exists | AWS request metadata (IP, UA, timestamp) | Google Analytics 4, incl. signed-in app | Over-cap mail held 72h, then deleted |
 | AdGuard Mail | Delivery only | Anti-abuse logs | Internal | Email and account data |
 | 33Mail | Delivery only | Standard logs | Unknown | Basic account info |
 | Ivy (IronVest) | Delivery only; zero-knowledge architecture | Standard logs | Basic | Account and payment data |
@@ -298,6 +304,7 @@ Think of it like a P.O. Box for your email - you hand out forwarding addresses, 
 |---|---|---|---|---|
 | SimpleLogin | All existing aliases (receive + reply within free limits) | New alias creation beyond 10 | Nothing permanent | **Minimal** - aliases stay active forever |
 | Forward Email | Existing forwarding | Premium SMTP/API, priority support | Some premium configs | **Low** |
+| Emcognito | All aliases keep receiving | Forwards above 100/mo | Nothing permanent | **Moderate** — over-cap mail is held 72h, then lost |
 | AdGuard Mail | Free features and base quota | Premium domains/features | Premium-only aliases | **Low** |
 | 33Mail | Basic forwarding | Custom domains, higher reply limits | Custom domain configs | **Moderate** |
 | Firefox Relay | First 50 masks | Extra masks | Masks beyond free limit | **Moderate** |
@@ -320,6 +327,7 @@ Think of it like a P.O. Box for your email - you hand out forwarding addresses, 
 | Addy.io | Netherlands 🇳🇱 (EU) | ✅ | EU legal process required |
 | StartMail | Netherlands 🇳🇱 (EU) | ✅ | EU legal process required |
 | Erine.email | France 🇫🇷 (EU) | ✅ | EU legal process required |
+| Emcognito | United States 🇺🇸 | ✅ (applicable) | US law |
 | AdGuard Mail | Cyprus 🇨🇾 (EU) | ✅ | EU legal process required |
 | 33Mail | United Kingdom 🇬🇧 | ✅ (UK GDPR) | UK legal process |
 | Forward Email | United States 🇺🇸 | ✅ (applicable) | US law; self-host option available |
